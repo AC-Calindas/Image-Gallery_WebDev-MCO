@@ -49,17 +49,26 @@ require_once 'config.php';
             display: inline-block;
             animation: fadeInUp 1s ease;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        
-        .enter-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-            background: #f5f5f5;
-        }
-        
-        .enter-btn i {
-            margin-left: 10px;
-        }
+            position: relative;
+            z-index: 10;
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+}
+
+.enter-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    background: #f5f5f5;
+}
+
+.enter-btn i {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.enter-btn:hover i {
+    transform: translateX(5px);
+}
         
         @keyframes fadeIn {
             from { opacity: 0; }
